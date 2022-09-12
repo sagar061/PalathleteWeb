@@ -1,0 +1,15 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (this.User.IsInRole("Admin"))
+    {        
+            <ul class="nav navbar-nav navbar-right">
+            <li><a asp-controller="Item" asp-action="Create">New Item</a></li>
+            </ul>
+    }
+    
+}

@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32825.248
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PalathleteLib", "PalathleteLib\PalathleteLib.csproj", "{B734B9ED-CDFF-40AD-9F57-5123B9157F85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Palathlete", "Palathlete\Palathlete.csproj", "{34FA67B2-0F40-4937-9957-33569C3D2CC8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B734B9ED-CDFF-40AD-9F57-5123B9157F85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B734B9ED-CDFF-40AD-9F57-5123B9157F85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B734B9ED-CDFF-40AD-9F57-5123B9157F85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B734B9ED-CDFF-40AD-9F57-5123B9157F85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34FA67B2-0F40-4937-9957-33569C3D2CC8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34FA67B2-0F40-4937-9957-33569C3D2CC8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34FA67B2-0F40-4937-9957-33569C3D2CC8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34FA67B2-0F40-4937-9957-33569C3D2CC8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C943EC93-3B37-4850-8AFE-56CE281B985F}
+	EndGlobalSection
+EndGlobal
