@@ -1,0 +1,17 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (this.User.IsInRole("Admin"))
+    {
+        @*   <div class="button" align="right">*@
+        <a class="btn btn-primary" align="right"
+   asp-controller="Item"
+   asp-action="Delete"
+   asp-route-itemId="@Model.ItemId">Delete Item</a>
+    }
+
+}

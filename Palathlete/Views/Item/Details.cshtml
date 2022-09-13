@@ -15,6 +15,8 @@
             <p class="button">
                 <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
                    asp-route-itemId="@Model.ItemId">Add to cart</a>
+                <partial name="_EditAdminPartial" />
+                <partial name="_DeleteAdminPartial" />
             </p>
         </div>
     </div>

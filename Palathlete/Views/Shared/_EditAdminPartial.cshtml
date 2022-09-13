@@ -1,0 +1,16 @@
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+    @if (this.User.IsInRole("Admin"))
+    {
+        <a class="btn btn-primary" align="center"
+   asp-controller="Item"
+   asp-action="Edit"
+   asp-route-itemId="@Model.ItemId">Edit Item</a>
+    }
+
+}
