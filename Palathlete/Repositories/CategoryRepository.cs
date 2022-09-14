@@ -1,6 +1,9 @@
 ﻿using System.Collections.Generic;
 using System;
 using Palathlete.Data;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace PalathleteLib.Models
 {
@@ -14,6 +17,11 @@ namespace PalathleteLib.Models
         }
 
         public IEnumerable<Category> AllCategories => _appDbContext.Categories;
+
+        public async Task<IEnumerable<Category>> GetAllCategories()
+        {
+            return await _appDbContext.Categories.ToListAsync();
+        }
 
     }
 }

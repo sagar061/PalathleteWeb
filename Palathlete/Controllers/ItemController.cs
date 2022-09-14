@@ -59,43 +59,40 @@ namespace Palathlete.Controllers
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public IActionResult Create()
-        {
-            //ViewBag.Categories = new SelectList(_categoryRepository.AllCategories.ToList(), "Id", "Categories");
-            //var dropdownsData = await _service.GetDropdownsValues();
-            var dropdownData = _categoryRepository.AllCategories;
-            ViewBag.Categories = new SelectList(dropdownData, "Id", "Categories");
+        public async Task<IActionResult> Create()
+        {           
+            ViewBag.Categories = new SelectList(await _categoryRepository.GetAllCategories(), "CategoryId", "CategoryName");
             return View();
         }
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public IActionResult Create(Item item)
+        public async Task<IActionResult> Create(Item item)
         {
-            //ViewBag.Categories = new SelectList(_categoryRepository.AllCategories.ToList(), "Id", "Categories");
-            var dropdownData = _categoryRepository.AllCategories;
-            ViewBag.Categories = new SelectList(dropdownData, "Id", "Categories");
+            ViewBag.Categories = new SelectList(await _categoryRepository.GetAllCategories(), "CategoryId", "CategoryName");
             _itemRepository.CreateItem(item);
             return View();
         }
 
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
+            ViewBag.Categories = new SelectList(await _categoryRepository.GetAllCategories(), "CategoryId", "CategoryName");
             var item = _itemRepository.GetItemById(id);
             return View(item);
         }
 
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public IActionResult Edit(Item item)
+        public async Task<IActionResult> Edit(Item item)
         {
+            ViewBag.Categories = new SelectList(await _categoryRepository.GetAllCategories(), "CategoryId", "CategoryName");
             _itemRepository.UpdateItem(item);
             return View();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult Delete(int id)
         {
@@ -103,7 +100,7 @@ namespace Palathlete.Controllers
             return View(item);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult Delete(Item item)
         {

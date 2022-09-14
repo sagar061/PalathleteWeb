@@ -36,7 +36,7 @@ namespace Palathlete.Models
         {
             return _appDbContext.Items.FirstOrDefault(p => p.ItemId == itemId);
         }
-               
+      
         public void CreateItem(Item item)
         {
             _appDbContext.Items.Add(item);
